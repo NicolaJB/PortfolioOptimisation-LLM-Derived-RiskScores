@@ -1,54 +1,79 @@
-
 # Portfolio Optimisation with LLM-Derived Risk Scores
 
-This project demonstrates AI-enhanced portfolio allocation, where traditional expected returns are replaced with risk scores derived from a language model (LLM). The goal is to minimise portfolio variance while maintaining strong expected outcomes, following Modern Portfolio Theory (MPT) principles.
+## Overview
+This repository demonstrates how language-model-derived risk scores can augment classical portfolio optimisation. It replaces traditional expected returns with document-driven risk metrics to minimise portfolio variance while maintaining strong expected outcomes under Modern Portfolio Theory (MPT) principles.
 
-The workflow showcases how multi-step AI pipelines can produce audit-ready, explainable outputs for financial decision-making in regulated or high-stakes environments.
+It is intended as a teaching and prototype example for teams exploring how LLMs can enrich regulated financial decision-making with transparent, audit-ready outputs.
 
+## Features
+- LLM-driven risk scoring: generate per-stock risk scores from textual risk factors.
+- Portfolio optimisation: minimise variance under allocation constraints.
+- Audit-ready outputs: structured logs of risk scores and optimised weights.
+- Visualisation: clear plots of allocation strategy for stakeholders.
+- Fully reproducible: end-to-end workflow in a single notebook.
 
-## Key Features
+## Repository Structure
+```bash
+portfolio-optimisation-llm-risk/
+├─ README.md # This file
+├─ PortfolioOptimisation.ipynb # Full analysis pipeline
+├─ data/ # (Optional) sample documents / risk factors
+└─ images/ # Example outputs (charts, audit logs)
+```
 
-- Analyse major stocks: **AAPL, GOOGL, MSFT, AMZN, TSLA**  
-- Generate **document-driven risk scores** using an LLM  
-- Compute portfolio variance and optimise allocations  
-- Produce structured outputs suitable for **audit and compliance tracking**  
-- Visualise the optimised portfolio allocations  
+## Quick Start
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/yourusername/portfolio-optimisation-llm-risk.git
+   cd portfolio-optimisation-llm-risk
+   ```
+2. Install dependencies
 
-## Workflow Overview
+```bash
+pip install -r requirements.txt
+```
+Requires Python ≥3.11, yfinance, pandas, numpy, matplotlib, scipy, transformers.
 
-1. **Data Retrieval & Preprocessing**  
-   Download historical stock prices and compute returns and covariance matrix.  
+3. Open the notebook
+- Launch Jupyter or Google Colab and run Portfolio-Optimisation-LLM-RiskScores.ipynb.
 
-2. **LLM Risk Scoring**  
-   Generate risk scores per stock using a language model based on textual risk factors.  
+4. Configure tickers and risk documents
+- In the first cell, edit the tickers list or documents dictionary to match your own portfolio universe.
 
-3. **Portfolio Optimisation**  
-   Define constraints and use classical optimisation to minimise variance under a minimum allocation per stock.  
+5. Run all cells
+The notebook will:
+- Download historical price data
+- Compute returns and covariance matrix
+- Generate risk scores via a language model
+- Optimise portfolio weights
+- Log structured outputs for audit
+- Plot optimised allocations
 
-4. **Evaluation & Audit Logging**  
-   Compute weighted portfolio risk and variance; produce structured audit-ready outputs.  
+## Outputs
+Audit Log Table:
 
-5. **Visualisation**  
-   Plot optimised portfolio weights to illustrate allocation strategy.  
+Ticker | LLM_Risk_Score | Optimised_Weight
 
+**Example Portfolio Weights Allocation Chart**  
+![Portfolio Weights](images/portfolio_weights.png)  
 
-## Technologies Used
+These outputs are suitable for presentations, stakeholder reviews, or compliance documentation.
 
-- **Python 3.11**  
-- **yfinance** – Historical stock data  
-- **NumPy, Pandas, Matplotlib** – Data processing & visualisation  
-- **scipy.optimize** – Portfolio optimisation  
-- **transformers** – LLM inference for risk scoring  
+## Interpretation Guide
+- LLM Risk Score: 0 = low risk (positive sentiment), 1 = high risk (negative sentiment).
+- Optimised Weight: Fraction of capital allocated to each stock under variance minimisation.
+- Portfolio Variance: Total risk metric from the covariance matrix given chosen weights.
 
-## Outcomes
+## Data and Compliance Note
+This project uses publicly available market data (Yahoo Finance) and synthetic sample documents for risk scoring. No confidential or personally identifiable information is included. It is provided for demonstration and educational purposes only.
 
-- Produced a fully reproducible, end-to-end AI workflow for portfolio optimisation.  
-- Demonstrated how LLM-derived insights can augment classical financial models.  
-- Created structured outputs for auditability, bridging AI with regulated-domain requirements.  
+## Technologies
+- Python 3.11
+- yfinance – historical stock data
+- NumPy / Pandas – data processing
+- SciPy – optimisation
+- Matplotlib – visualisation
+- Hugging Face Transformers – LLM inference
 
----
-
-## License
-
-This project is licensed under the **MIT License**.
-
+## Licence
+MIT Licence. See the LICENCE file for details.
