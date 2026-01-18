@@ -1,7 +1,7 @@
-# Portfolio Optimisation with LLM-Derived Risk Scores
+# Classical Portfolio Optimisation with LLM-Derived Risk Scores (Quantum-Ready Prototype)
 
 ## Overview
-This repository demonstrates how language-model-derived risk scores can augment classical portfolio optimisation. Traditional expected returns are replaced with document-driven risk metrics, enabling variance minimisation while maintaining expected outcomes under Modern Portfolio Theory (MPT) principles.
+This repository demonstrates how language-model-derived risk scores can augment classical portfolio optimisation. Traditional expected returns are replaced with document-driven risk metrics, enabling variance minimisation while maintaining expected outcomes under Modern Portfolio Theory (MPT) principles. The pipeline is implemented classically but structured to support future experimentation with quantum-inspired or quantum ML approaches.
 
 ### This version:  
 - Reads like a professional **prototype/portfolio repo**.  
